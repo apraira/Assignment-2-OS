@@ -5,4 +5,19 @@ bagaimana cara menyelesaikan masalah level medium, "Perfect Number", yang terdap
 
 
 # Perfect Number Solution
-Problem ini
+Problem ini meminta kita untuk menentukan apakah sebuah bilangan itu merupakan sempurna (perfect), berlimpah(abundant), atau kurang(deficient) berdasarkan skema klasifikasi Nicomachus (60M -120M) untuk bilangan asli.
+
+Pengidentifikasian suatu bilangan asli itu perfect, abundant, atau deficient didapatkan dari penjumlahan faktor-faktor dari suatu bilangan tidak termasuk bilangan itu sendiri atau yang disebut dengan alikuot.
+
+
+# Ketentuan
+1. Sempurna (Perfect): Jumlah alikuot = bilangan
+  > 6 adalah bilangan sempurna karena (1 + 2 + 3) = 6
+  
+2. Berlimpah (Abundant): Jumlah alikuot > bilangan
+  > 12 adalah abundant karena (1 + 2 + 3 + 4 + 6) = 16
+  
+3. Kekurangan (Deficient): jumlah alikuot < bilangan
+  > 8 adalah angka yang deficient karena (1 + 2 + 4) = 7
+
+# Solusi
