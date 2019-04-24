@@ -1,7 +1,20 @@
+Nama: Salsa Rahmadati
+Exercism username: salsarahmadati
+
 # Assignment 2 Operating System
 Assalamualaikum warahmatullahi wabarakatuh, alhamdulillah saya dapat menyelesaikan tugas ini tepat pada waktunya.
-Tugas ini disusun untuk mata kuliah Sistem Operasi yang dibimbing oleh pak Eka, dalam essay ini saya akan menjelaskan
-bagaimana cara menyelesaikan masalah level medium, "Perfect Number", yang terdapat di https://exercism.io .
+Tugas ini disusun untuk mata kuliah Sistem Operasi yang dibimbing oleh pak Eka. 
+
+Saya menyelesaikan 5 problem medium:
+-Hamming
+-Isogram
+-Clock
+-Perfect Number
+-Triangles
+
+Dalam essay ini saya akan menjelaskan bagaimana cara menyelesaikan masalah level medium, "Perfect Number", yang terdapat di https://exercism.io .
+
+
 
 
 ## Perfect Number Solution
@@ -22,15 +35,7 @@ Pengidentifikasian suatu bilangan asli itu perfect, abundant, atau deficient did
 
 ## Solusi saya
 
-Untuk menyelesaikan test pertama, dimana kalau angkanya 0  hasilnya None, caranya begini
-
-```rust
- if num == 0{
-        return None;
-    } 
-```
-
-Selanjutnya saya membuat fungsi baru untuk menjumlahkan alikuot
+Pertama saya membuat fungsi baru untuk menjumlahkan alikuot:
 
 ```rust
 pub fn sum(x:u64) -> u64{
@@ -49,5 +54,69 @@ pub fn sum(x:u64) -> u64{
     
 }
 ```
+
+Setelah itu di fungsi classify kita membuat if&else:
+
+```rust
+
+pub fn classify(num: u64) -> Option<Classification> {
+    if num > 0 { //jika num lebih besar dari 0 maka lanjut 
+        if sum(num) == num { //cek lagi apakah summ dari faktor itu sama 
+            return Some(Classification::Perfect) }  //jika iya maka Perfect
+        else if sum(num) > num { //Jika lebih dari jumlah sum
+        Some(Classification::Abundant) //maka Abundant
+        } else { //Jika kurang dari
+        Some(Classification::Deficient) //Maka deficient
+        }
+    } else {
+        None //jika bilangan kurang dari 0 returnnya None
+    }
+}
+```
+
+## Full Code
+
+```rust
+
+
+#[derive(Debug, PartialEq, Eq)]
+pub enum Classification {
+    Abundant,
+    Perfect,
+    Deficient,
+}
+
+pub fn classify(num: u64) -> Option<Classification> {
+    if num > 0 { //jika num lebih besar dari 0 maka lanjut 
+        if sum(num) == num { //cek lagi apakah summ dari faktor itu sama 
+            return Some(Classification::Perfect) }  //jika iya maka Perfect
+        else if sum(num) > num { //Jika lebih dari jumlah sum
+        Some(Classification::Abundant) //maka Abundant
+        } else { //Jika kurang dari
+        Some(Classification::Deficient) //Maka deficient
+        }
+    } else {
+        None //jika bilangan kurang dari 0 returnnya None
+    }
+}
+
+pub fn sum(x:u64) -> u64{
+    let mut sum = 0; //membuat variabel baru
+    if x > 0 {
+        for i in 1..x{
+            if x%i == 0 { //jika x habis dibagi i
+            sum = sum + i; //maka sum yang tadinya 0 ditambah dengan value dari i
+            }else{
+            sum = sum; //kalau gak habis sum tetap
+            }
+            
+        }
+    }
+    sum
+    
+}
+```
+
+
 
  
