@@ -1,5 +1,6 @@
-Nama: Salsa Rahmadati
-, Exercism username: salsarahmadati
+**Nama: Salsa Rahmadati**
+
+**Exercism username: salsarahmadati**
 
 # Assignment 2 Operating System
 Assalamualaikum warahmatullahi wabarakatuh, alhamdulillah saya dapat menyelesaikan tugas ini tepat pada waktunya.
@@ -12,7 +13,7 @@ Saya menyelesaikan 5 problem medium:
 - Perfect Number
 - Triangles
 
-Dalam essay ini saya akan menjelaskan bagaimana cara menyelesaikan masalah level medium, "Perfect Number", yang terdapat di https://exercism.io .
+Dalam esai ini saya akan menjelaskan bagaimana cara menyelesaikan masalah level medium, "Perfect Number", yang terdapat di https://exercism.io .
 
 
 
@@ -35,27 +36,31 @@ Pengidentifikasian suatu bilangan asli itu perfect, abundant, atau deficient did
 
 ## Solusi saya
 
-Pertama saya membuat fungsi baru untuk menjumlahkan alikuot:
+Hal yang pertama saya lakukan adalah membuat jawaban dari pertanyaan "bagaimana cara menjumlahkan faktor-faktor dari sebuah bilangan tanpa bilangan itu sendiri", saya membuat fungsi baru bernama sum yang mempunyai tipe u64, sama seperti tipe yang ada di fungsi classify. Fungsi ini berfungsi untuk menjumlahkan faktor-faktor tidak termasuk bilangan itu sendiri. Fungsi ini hanya akan saya panggil ketika x > 0.
 
 ```rust
 pub fn sum(x:u64) -> u64{
     let mut sum = 0; //membuat variabel baru
-    if x > 0 {
         for i in 1..x{
             if x%i == 0 { //jika x habis dibagi i
             sum = sum + i; //maka sum yang tadinya 0 ditambah dengan value dari i
             }else{
             sum = sum; //kalau gak habis sum tetap
             }
-            
-        }
-    }
-    sum
     
+        }
+    sum
 }
 ```
+**Penjelasan:**
+- Fungsi ini dipanggil dengan sum(x) dimana x adalah bilangan bertipe u64.
+- Setelah dipanggil, maka akan ada variabel count yang disini saya beri nama sum, variabel ini saya inisiasi terlebih dahulu dengan 0.
+- Lalu kita menjalankan indeks (i) dari 1 sampai bilangan x.
+- Jika bilangan x habis dibagi i, maka variabel sum yang tadinya 0 akan ditambah dengan nilai i.
+- Proses ini akan selesai ketika i = x.
+- Dan akan mengembalikan nilai dari variabel sum itu sendiri.
 
-Setelah itu di fungsi classify kita membuat if&else:
+Setelah itu saya menambahkan _if & else_ untuk mengidentifikasi apakah bilangan asli itu adalah _Perfect_, _Deficient_, atau, _Abundant_. Fungsi classify ini mempunyai _input_ dengan tipe data u64 dan _output_ dengan tipe data Option. 
 
 ```rust
 
@@ -73,6 +78,9 @@ pub fn classify(num: u64) -> Option<Classification> {
     }
 }
 ```
+**Penjelasan:**
+- Pada fungsi ini, saya memanggil fungsi sum(x) yang sudah saya buat sebelumnya.
+- Dengan memanggil fungsi sum(x) dan mengkombinasikannya dengan _if & else_ maka saya dapat dengan mudah mengklasifikasikan mana yang Sempurna, Kelebihan, maupun Kekurangan sesuai dengan ketentuan yang berlaku.
 
 ## Full Code
 
