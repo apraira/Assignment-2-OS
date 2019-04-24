@@ -16,3 +16,5 @@ pub fn check(candidate: &str) -> bool {
     }
    true
 }
+
+//Problem link: https://exercism.io/tracks/rust/exercises/hamming/solutions/bd9a08fbdcec469495de90e82c715439
