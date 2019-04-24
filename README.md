@@ -6,11 +6,11 @@ Assalamualaikum warahmatullahi wabarakatuh, alhamdulillah saya dapat menyelesaik
 Tugas ini disusun untuk mata kuliah Sistem Operasi yang dibimbing oleh pak Eka. 
 
 Saya menyelesaikan 5 problem medium:
--Hamming
--Isogram
--Clock
--Perfect Number
--Triangles
+- Hamming
+- Isogram
+- Clock
+- Perfect Number
+- Triangles
 
 Dalam essay ini saya akan menjelaskan bagaimana cara menyelesaikan masalah level medium, "Perfect Number", yang terdapat di https://exercism.io .
 
