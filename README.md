@@ -1,5 +1,5 @@
 Nama: Salsa Rahmadati
-Exercism username: salsarahmadati
+, Exercism username: salsarahmadati
 
 # Assignment 2 Operating System
 Assalamualaikum warahmatullahi wabarakatuh, alhamdulillah saya dapat menyelesaikan tugas ini tepat pada waktunya.
