@@ -97,3 +97,5 @@ impl PartialEq for Clock {
         true
     }
 }
+
+// Problem link: https://exercism.io/tracks/rust/exercises/clock/solutions/4edd7212de63459d8fa514cc94da8c54
