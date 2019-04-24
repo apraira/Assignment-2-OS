@@ -22,11 +22,32 @@ Pengidentifikasian suatu bilangan asli itu perfect, abundant, atau deficient did
 
 ## Solusi saya
 
-1. Untuk menyelesaikan test pertama, dimana kalau angkanya 0  hasilnya None, caranya begini
+Untuk menyelesaikan test pertama, dimana kalau angkanya 0  hasilnya None, caranya begini
+
+```rust
  if num == 0{
         return None;
     } 
+```
 
+Selanjutnya saya membuat fungsi baru untuk menjumlahkan alikuot
 
+```rust
+pub fn sum(x:u64) -> u64{
+    let mut sum = 0; //membuat variabel baru
+    if x > 0 {
+        for i in 1..x{
+            if x%i == 0 { //jika x habis dibagi i
+            sum = sum + i; //maka sum yang tadinya 0 ditambah dengan value dari i
+            }else{
+            sum = sum; //kalau gak habis sum tetap
+            }
+            
+        }
+    }
+    sum
+    
+}
+```
 
  
