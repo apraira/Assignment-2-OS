@@ -30,3 +30,5 @@ impl Triangle {
 
     
 }
+
+//Problem link: https://exercism.io/tracks/rust/exercises/triangle/solutions/e58fe344a16c49acb84a1d83fd3477e9
